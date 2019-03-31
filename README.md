@@ -91,10 +91,10 @@ Clase dedicada al intercambio de información entre la pantalla (eclipse) y el c
 
 **Metodos**
 
-- ControlJuego()
+- ControlJuego(): Constructor
 - run()
-- enviar()
-- recibir()
+- enviar(): envia los datos al control del juego (android)
+- recibir(): recibe los datos al control del juego (android)
 
 
 
@@ -102,16 +102,16 @@ Clase dedicada al intercambio de información entre la pantalla (eclipse) y el c
 ## Android Studio / Control Usuario
 
 ### Pinicio
-
+Se le implementa la clase Observer, pantalla de inicio del juego
 **Atributos**
-- jugar: Button
+- jugar: Button 
 - instruc: Button
 **Metodos**
 - OnCreate()
 - update()
 
 ### Pinstrucciones
-
+Se le implementa la clase Observer, pantalla de instrucciones del juego
 **Atributos**
 - jugar
 **Metodos**
@@ -119,19 +119,27 @@ Clase dedicada al intercambio de información entre la pantalla (eclipse) y el c
 - update()
 
 ### Pjuego
-
+Se le implementa la clase Observer, pantalla  del juego
 **Atributos**
 - arriba:  Button
 - abajo : Button
 - derecha : Button
 - izquierda : Button
 
-
 **Metodos**
+- OnCreate()
+- update()
+
 ### Comunicacion
+Clase dedicada al intercambio de información entre la pantalla (eclipse) y el control (android), extiende de Observable e implementa Runnable 
+
 **Atributos**
 - socket: Socket
 - salida: DataOutputStream
 - entrada: DataInputStream
 - conectado: boolean
 **Metodos**
+- Comunicacion() 
+- getRef()
+- recibir()
+- enviar()
